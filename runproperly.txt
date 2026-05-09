@@ -1,0 +1,56 @@
+/// use command as shown to run it properly ///
+
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install nasm qemu
+rustup target add x86_64-unknown-none
+
+cd my_os
+chmod +x build.sh run.sh
+make build
+
+/// for running ///
+
+make run
+
+
+/// use it in another vm ///
+
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install nasm qemu
+rustup target add x86_64-unknown-none
+
+cd my_os
+chmod +x build.sh run.sh
+make build
+
+/// this create img of os after use this setting ///
+
+Architecture: x86_64 / 64-bit PC
+Boot mode: BIOS / Legacy BIOS
+Do not use: UEFI
+Disk type: Hard disk
+Disk controller: IDE if possible
+Memory: 64 MB or more
+Networking: disabled/not needed
+USB: disabled/not needed
+
+/// choose image ///
+
+my_os/disk/os.img
+
+
+
+/// another way ///
+
+/// convert image to vdi ///
+
+cd my_os
+qemu-img convert -f raw -O vdi disk/os.img disk/os.vdi
+
+
+ Legacy BIOS
+ Disable EFI
