@@ -1,0 +1,11 @@
+tiny64: Rust kernel entered long mode
+-----------------------------------
+memory: first 1 GiB identity-mapped with 2 MiB pages
+memory: kernel loaded at physical 0x100000
+heap: simple bump allocator ready (64 KiB)
+heap: allocated 64-byte demo block
+fs: tinyfs mounted at LBA 2048
+keyboard: IRQ1 enabled
+
+type 'help' for commands
+> 
